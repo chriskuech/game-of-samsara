@@ -38,14 +38,6 @@ export class Cell {
 
           return
         }
-
-        // // kill the cell if it's old
-        // if (Date.now() - this.transitionTime > 4 * DEAD_PERIOD) {
-        //   this.transition('dying', DEAD_PERIOD, () => {
-        //     world.bardo.push({ id: this.id, karma: this.karma })
-        //     this.update(world)
-        //   })
-        // }
       })
       .with('dead', () => {
         // see if the cell can take a new soul (has at least 2 living neighbors)
