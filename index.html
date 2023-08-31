@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game of Samsara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sarala:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        overflow: hidden;
+        font-family: Sarala, sans-serif;
+      }
+      h1 {
+        color: #800020;
+        font-size: 3.3em;
+        margin: 1.3rem 0;
+      }
+      #info {
+        bottom: 3rem;
+        position: absolute;
+        z-index: 10;
+        width: 500px;
+        background-color: #daa520;
+        color: #333;
+        padding: 2rem;
+        box-sizing: border-box;
+        display: none;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
+      }
+      #info a {
+        color: #777;
+      }
+      #info-button {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: #daa520;
+        font-size: 4rem;
+        font-weight: bold;
+        width: 4rem;
+        height: 4rem;
+        text-align: center;
+        line-height: 4rem;
+        cursor: pointer !important;
+        text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+      }
+      #info-button:hover {
+        text-shadow: 0 2px 2px rgba(0, 0, 0, 1);
+        bottom: 2px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="info">
+      <h1>Game of Samsara</h1>
+      This adaptation of the
+      <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life" target="_blank">Game of Life</a> extends the game
+      beyond death through reincarnation.
+      <ul>
+        <li>
+          An atman's karma is determined by the number of dead cells and alive cells around it throughout its lifetimes.
+        </li>
+        <li>A cell dies if it has reached the end of its lifespan.</li>
+        <li>An atman can only be rebirthed in a cell if the cell is empty.</li>
+        <li>An atman can only be rebirthed in a cell if it has at least two living neighbors.</li>
+        <li>An atman can only be rebirthed in a cell if it is in the same caste based on accumulated karma.</li>
+        <li>
+          Unlike the Game of Life, the game is constantly running rather than evaluating the whole board at an interval.
+        </li>
+      </ul>
+
+      (click anywhere to close)
+    </div>
+    <div id="info-button">?</div>
+    <canvas></canvas>
+    <script src="./dist/index.js"></script>
+    <script>
+      document.getElementById('info-button').addEventListener('click', (e) => {
+        e.stopImmediatePropagation()
+        document.getElementById('info').style.display = 'block'
+        console.log('opening')
+      })
+      document.body.addEventListener('click', () => {
+        document.getElementById('info').style.display = 'none'
+        console.log('closing')
+      })
+    </script>
+  </body>
+</html>

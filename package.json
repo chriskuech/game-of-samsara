@@ -1,0 +1,34 @@
+{
+  "name": "game-of-samsara",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "dev": "webpack build --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chriskuech/game-of-samsara.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chriskuech/game-of-samsara/issues"
+  },
+  "homepage": "https://github.com/chriskuech/game-of-samsara#readme",
+  "devDependencies": {
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "@types/uuid": "^9.0.3",
+    "ts-pattern": "^5.0.5",
+    "uuid": "^9.0.0"
+  }
+}
